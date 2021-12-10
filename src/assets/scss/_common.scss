@@ -1940,7 +1940,6 @@ a.default-btn {
   border: 2px;
   display: flex;
   flex-direction: column;
-  border: 1px solid #fca249;
 }
 
 .CreateFeedPost-title {
@@ -1952,7 +1951,7 @@ a.default-btn {
   border: 2px;
   margin: 20px;
   width: 90%;
-  height: 70px;
+  height: 300px;
   resize: none;
 
   display: flex;
@@ -1992,15 +1991,24 @@ a.default-btn {
 .FeedPost_text {
   color: #dcdcdc;
   padding: 20px;
+  width: 50%;
+  @media #{$xs-layout} {
+    width: 100%;
+  }
 }
 .user-info-display {
   display: flex;
+  flex-direction: column;
   height: 50px;
   margin: 5px;
 }
 .user-info-display h5 {
   color: #dcdcdc;
   align-self: center;
+}
+.user-info-display h6 {
+  color: #dcdcdc;
+  align-self: baseline;
 }
 .user-info-display h {
   color: #dcdcdc;
@@ -2015,4 +2023,81 @@ a.default-btn {
 }
 .FeedPost-Button {
   margin: 0 10px 10px 0;
+}
+.upload-area {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // padding: 20px;
+  @media #{$xs-layout} {
+    width: 100%;
+  }
+}
+.writing-area {
+  width: 50%;
+  @media #{$xs-layout} {
+    width: 100%;
+  }
+}
+.Posting-area {
+  display: flex;
+  flex-direction: row;
+  @media #{$xs-layout} {
+    flex-direction: column;
+  }
+}
+.UploadButton {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+
+  margin-top: 12px;
+  padding: 15px 52px;
+
+  text-transform: uppercase;
+
+  color: #fff;
+  border: none;
+  background-color: #404040;
+  &:hover {
+    background-color: $theme-color;
+  }
+}
+.feed-post-content {
+  display: flex;
+  flex-direction: row;
+  @media #{$xs-layout} {
+    flex-direction: column;
+  }
+}
+.feed-post-content-fromupload {
+  width: 50%;
+  height: auto;
+  padding-bottom: 20px;
+  @media #{$xs-layout,$md-layout} {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
+.feed-post-content_img {
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+  @media #{$xs-layout} {
+    width: 100%;
+  }
+}
+.format_icon {
+  font-size: 30px;
+  color: #ffff;
+  padding: 20px;
+  &:hover {
+    background-color: $theme-color;
+  }
+}
+.feedPost-bar {
+  display: flex;
+  flex-direction: row;
 }

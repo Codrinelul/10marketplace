@@ -9,17 +9,17 @@ import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 
 
-import { Link, NavLink } from "react-router-dom";
+import { Link, } from "react-router-dom";
 
 import axios from 'axios';
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, } from "react-router-dom";
 
 const LoginSignIn = () => {
 
     const [msg, setMsg] = useState('');
 
-    const [username, setUsername] = useState("");
-    const [pass, setPass] = useState("");
+    // const [ username ] = useState("");
+    //uncoment this on deployment
 
     const [user, setUser] = useState({
         email: "",
@@ -35,7 +35,7 @@ const LoginSignIn = () => {
 
     const signIn = () => {
 
-        const users = { username };  // To Store Email in Localstore and send to Home Page 
+        // const users = { username };  // To Store Email in Localstore and send to Home Page 
 
         if (user.email === '') {
             alert('Email Field is empty')

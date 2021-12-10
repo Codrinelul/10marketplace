@@ -1,18 +1,17 @@
 import PropTypes from "prop-types";
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import MetaTags from "react-meta-tags";
-import { Link, NavLink } from "react-router-dom";
 import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
-import axios from "axios";
+// import axios from "axios";
 
 const LoginRegister = ({ location }) => {
   const { pathname } = location;
 
-  const [errors, setErrors] = useState('');
+  const [setErrors] = useState('');
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -26,12 +25,14 @@ const LoginRegister = ({ location }) => {
 
 
   async function signup() {
-    let result = await axios.post("http://localhost:8000/api/register", user);
+    // let result = await axios.post("http://localhost:8000/api/register", user);
+    //uncoment this when you get apikey and axios import
     setErrors('Registration Successful')
     setUser({ name: "", email: "", password: "" }) // To Clear all fields
 
   }
-  const onSubmit = setUser => console.log(setUser);
+  // const onSubmit = setUser => console.log(setUser);
+  //and this to 
   return (
     <Fragment>
       <MetaTags>

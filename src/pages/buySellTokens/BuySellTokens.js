@@ -1,16 +1,14 @@
 import PropTypes from "prop-types";
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
 import MetaTags from "react-meta-tags";
 import { connect } from "react-redux";
 import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
-import { getDiscountPrice } from "../../helpers/product";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 
-const Tokens = ({ location, cartItems, currency }) => {
+const Tokens = ({ location, currency }) => {
     const { pathname } = location;
-    let cartTotalPrice = 0;
+    ;
 
     return (
         <Fragment>

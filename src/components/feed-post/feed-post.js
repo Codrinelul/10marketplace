@@ -11,14 +11,22 @@ class FeedPost extends Component {
                         <div>
                             <div className="user-info-display">
                                 <h5>UserName</h5>
+                                <h6>11/11/21</h6>
                             </div>
                         </div>
                     </div>
-                    <p className="FeedPost_text">New things coming soon!!!
-                    </p>
-                    {/* <div className="button-flex">
-                        <button className="FeedPost-button seo_btn pr_button seo_btn_one btn_hover wow fadeInLeft">Post</button>
-                    </div> */}
+                    <div className="feed-post-content">
+                        <p className="FeedPost_text">
+                            New things coming soon!!!
+                        </p>
+                        <div className="feed-post-contentFromUpload">
+                            <img className="feed-post-content_img" alt="feed-post-contentImg" src="/assets/img/banner/banner-63.png" />
+                        </div>
+                    </div>
+                    <div className="feedPost-bar">
+
+                        <i class="pe-7s-like2 format_icon"></i>
+                    </div>
                 </div>
 
             </div>
