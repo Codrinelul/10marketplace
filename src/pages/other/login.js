@@ -44,7 +44,7 @@ const LoginSignIn = () => {
             alert('Pass Field is empty')
         }
 
-        axios.post("http://localhost:8000/api/reactlogin/", user)
+        axios.post("http://92.87.185.5/", user)
             .then(response => {
                 setMsg(response.data);
                 localStorage.setItem("users", response.data);

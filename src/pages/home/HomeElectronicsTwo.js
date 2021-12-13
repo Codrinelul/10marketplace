@@ -6,7 +6,6 @@ import CategoryThreeSlider from "../../wrappers/category/CategoryThreeSlider";
 import FeatureIconFour from "../../wrappers/feature-icon/FeatureIconFour";
 import TabProductTen from "../../wrappers/product/TabProductTen";
 import BannerTwelve from "../../wrappers/banner/BannerTwelve";
-import BlogFeaturedThree from "../../wrappers/blog-featured/BlogFeaturedThree";
 
 const HomeElectronicsTwo = () => {
   return (
@@ -42,8 +41,7 @@ const HomeElectronicsTwo = () => {
         />
         {/* banner */}
         <BannerTwelve />
-        {/* blog featured */}
-        <BlogFeaturedThree spaceTopClass="pt-70" spaceBottomClass="pb-70" />
+
       </LayoutOne>
     </Fragment>
   );

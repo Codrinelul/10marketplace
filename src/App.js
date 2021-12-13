@@ -88,14 +88,6 @@ const ProductFixedImage = lazy(() =>
   import("./pages/shop-product/ProductFixedImage")
 );
 
-// blog pages
-const BlogStandard = lazy(() => import("./pages/blog/BlogStandard"));
-const BlogNoSidebar = lazy(() => import("./pages/blog/BlogNoSidebar"));
-const BlogRightSidebar = lazy(() => import("./pages/blog/BlogRightSidebar"));
-const BlogDetailsStandard = lazy(() =>
-  import("./pages/blog/BlogDetailsStandard")
-);
-
 // other pages
 const About = lazy(() => import("./pages/other/About"));
 const Contact = lazy(() => import("./pages/other/Contact"));
@@ -106,11 +98,19 @@ const login = lazy(() => import("./pages/other/login"));
 
 const Cart = lazy(() => import("./pages/other/Cart"));
 const Wishlist = lazy(() => import("./pages/other/Wishlist"));
-const Compare = lazy(() => import("./pages/other/Compare"));
 const Checkout = lazy(() => import("./pages/other/Checkout"));
 const Tokens = lazy(() => import("./pages/buySellTokens/BuySellTokens"));
 const NotFound = lazy(() => import("./pages/other/NotFound"));
 const PostProduct = lazy(() => import("./pages/other/PostProduct"));
+
+
+//StaticPages
+const paymentPolicy = lazy(() => import("./pages/staticPages/paymentPolicy"));
+const cookiesPolicy = lazy(() => import("./pages/staticPages/cookiesPolicy"));
+const privacyPolicy = lazy(() => import("./pages/staticPages/privacyPolicy"));
+const returnPolicy = lazy(() => import("./pages/staticPages/returnPolicy"));
+const termsAndConditions = lazy(() => import("./pages/staticPages/termsAndConditions"));
+
 
 const App = (props) => {
   useEffect(() => {
@@ -367,23 +367,6 @@ const App = (props) => {
                   component={ProductFixedImage}
                 />
 
-                {/* Blog pages */}
-                <Route
-                  path={process.env.PUBLIC_URL + "/blog-standard"}
-                  component={BlogStandard}
-                />
-                <Route
-                  path={process.env.PUBLIC_URL + "/blog-no-sidebar"}
-                  component={BlogNoSidebar}
-                />
-                <Route
-                  path={process.env.PUBLIC_URL + "/blog-right-sidebar"}
-                  component={BlogRightSidebar}
-                />
-                <Route
-                  path={process.env.PUBLIC_URL + "/blog-details-standard"}
-                  component={BlogDetailsStandard}
-                />
 
                 {/* Other pages */}
                 <Route
@@ -416,10 +399,7 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/wishlist"}
                   component={Wishlist}
                 />
-                <Route
-                  path={process.env.PUBLIC_URL + "/compare"}
-                  component={Compare}
-                />
+
                 <Route
                   path={process.env.PUBLIC_URL + "/checkout"}
                   component={Checkout}
@@ -437,6 +417,29 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/not-found"}
                   component={NotFound}
                 />
+
+                {/* Static pages */}
+                <Route
+                  path={process.env.PUBLIC_URL + "/cookiesPolicy"}
+                  component={cookiesPolicy}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/paymentPolicy"}
+                  component={paymentPolicy}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/privacyPolicy"}
+                  component={privacyPolicy}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/returnPolicy"}
+                  component={returnPolicy}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/termsAndConditions"}
+                  component={termsAndConditions}
+                />
+
 
                 <Route exact component={NotFound} />
               </Switch>

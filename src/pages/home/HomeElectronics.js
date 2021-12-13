@@ -8,7 +8,7 @@ import TabProductThree from "../../wrappers/product/TabProductThree";
 import BannerThree from "../../wrappers/banner/BannerThree";
 import TestimonialOne from "../../wrappers/testimonial/TestimonialOne";
 import BrandLogoSliderOne from "../../wrappers/brand-logo/BrandLogoSliderOne";
-import BlogFeaturedTwo from "../../wrappers/blog-featured/BlogFeaturedTwo";
+
 
 const HomeElectronics = () => {
   return (
@@ -48,8 +48,7 @@ const HomeElectronics = () => {
         {/* brand logo slider */}
         <BrandLogoSliderOne spaceBottomClass="pb-95" spaceTopClass="pt-100" />
 
-        {/* blog featured */}
-        <BlogFeaturedTwo spaceBottomClass="pb-55" />
+
       </LayoutTwo>
     </Fragment>
   );

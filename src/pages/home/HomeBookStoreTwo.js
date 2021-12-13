@@ -7,7 +7,6 @@ import TabProductFifteen from "../../wrappers/product/TabProductFifteen";
 import BannerTwentyFour from "../../wrappers/banner/BannerTwentyFour";
 import CountDownThree from "../../wrappers/countdown/CountDownThree";
 import FeatureIconFour from "../../wrappers/feature-icon/FeatureIconFour";
-import BlogFeaturedThree from "../../wrappers/blog-featured/BlogFeaturedThree";
 
 const HomeBookStoreTwo = () => {
   return (
@@ -41,8 +40,7 @@ const HomeBookStoreTwo = () => {
           containerClass="container"
           responsiveClass="res-mrg-md-mt"
         />
-        {/* blog featured */}
-        <BlogFeaturedThree spaceBottomClass="pb-70" />
+
       </LayoutOne>
     </Fragment>
   );

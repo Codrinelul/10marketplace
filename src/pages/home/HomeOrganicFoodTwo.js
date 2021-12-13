@@ -4,7 +4,7 @@ import LayoutOne from "../../layouts/LayoutOne";
 import HeroSliderTwenty from "../../wrappers/hero-slider/HeroSliderTwenty";
 import FeatureIconFour from "../../wrappers/feature-icon/FeatureIconFour";
 import TestimonialOne from "../../wrappers/testimonial/TestimonialOne";
-import BlogFeaturedThree from "../../wrappers/blog-featured/BlogFeaturedThree";
+
 import CountDownFour from "../../wrappers/countdown/CountDownFour";
 import BannerSeventeen from "../../wrappers/banner/BannerSeventeen";
 import TabProductFive from "../../wrappers/product/TabProductFive";
@@ -49,8 +49,7 @@ const HomeOrganicFoodTwo = () => {
           spaceBottomClass="pb-95"
           bgColorClass="bg-gray-3"
         />
-        {/* blog featured */}
-        <BlogFeaturedThree spaceTopClass="pt-70" spaceBottomClass="pb-70" />
+
       </LayoutOne>
     </Fragment>
   );

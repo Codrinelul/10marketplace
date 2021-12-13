@@ -4,7 +4,7 @@ import LayoutOne from "../../layouts/LayoutOne";
 import FeatureIconFour from "../../wrappers/feature-icon/FeatureIconFour";
 import BannerNineteen from "../../wrappers/banner/BannerNineteen";
 import TabProductFourteen from "../../wrappers/product/TabProductFourteen";
-import BlogFeaturedThree from "../../wrappers/blog-featured/BlogFeaturedThree";
+
 import BannerTwenty from "../../wrappers/banner/BannerTwenty";
 import HeroSliderTwentyTwo from "../../wrappers/hero-slider/HeroSliderTwentyTwo";
 
@@ -39,8 +39,7 @@ const HomeCakeShop = () => {
         />
         {/* banner */}
         <BannerTwenty />
-        {/* blog featured */}
-        <BlogFeaturedThree spaceTopClass="pt-70" spaceBottomClass="pb-70" />
+
       </LayoutOne>
     </Fragment>
   );

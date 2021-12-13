@@ -6,7 +6,6 @@ import FeatureIconEight from "../../wrappers/feature-icon/FeatureIconEight";
 import TabProductTwenty from "../../wrappers/product/TabProductTwenty";
 import TestimonialOne from "../../wrappers/testimonial/TestimonialOne";
 import CountDownFive from "../../wrappers/countdown/CountDownFive";
-import BlogFeaturedFive from "../../wrappers/blog-featured/BlogFeaturedFive";
 import ImageSliderTwo from "../../wrappers/image-slider/ImageSliderTwo";
 import CtaTwo from "../../wrappers/cta/CtaTwo";
 
@@ -46,8 +45,7 @@ const HomeFurnitureSeven = () => {
           image="/assets/img/banner/deal-10.png"
           dateTime="November 13, 2021 12:12:00"
         />
-        {/* blog post */}
-        <BlogFeaturedFive spaceTopClass="pt-100" spaceBottomClass="pb-70" />
+
         {/* image slider */}
         <ImageSliderTwo />
       </LayoutOne>

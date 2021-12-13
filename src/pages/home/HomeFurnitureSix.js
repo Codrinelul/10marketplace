@@ -7,7 +7,6 @@ import BannerThirtyOne from "../../wrappers/banner/BannerThirtyOne";
 import CountDownFive from "../../wrappers/countdown/CountDownFive";
 import TestimonialTwo from "../../wrappers/testimonial/TestimonialTwo";
 import BrandLogoSliderFour from "../../wrappers/brand-logo/BrandLogoSliderFour";
-import BlogFeaturedFive from "../../wrappers/blog-featured/BlogFeaturedFive";
 import NewsletterFive from "../../wrappers/newsletter/NewsletterFive";
 
 const HomeFurnitureSix = () => {
@@ -56,8 +55,7 @@ const HomeFurnitureSix = () => {
           backgroundImage="/assets/img/bg/testimonial-bg.jpg"
         />
 
-        {/* blog post */}
-        <BlogFeaturedFive spaceTopClass="pt-100" spaceBottomClass="pb-70" />
+
         {/* newsletter */}
         <NewsletterFive
           subscribeBtnClass="dark-blue-subscribe"

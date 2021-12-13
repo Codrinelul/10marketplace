@@ -6,7 +6,6 @@ import SliderBanner from "../../wrappers/slider-banner/SliderBanner";
 import TabProductFour from "../../wrappers/product/TabProductFour";
 import CtaOne from "../../wrappers/cta/CtaOne";
 import NewProductSlider from "../../wrappers/product/NewProductSlider";
-import BlogFeatured from "../../wrappers/blog-featured/BlogFeatured";
 import BrandLogoSliderTwo from "../../wrappers/brand-logo/BrandLogoSliderTwo";
 
 const HomeBookStore = () => {
@@ -45,7 +44,6 @@ const HomeBookStore = () => {
         {/* brand logo slider */}
         <BrandLogoSliderTwo />
         {/* blog featured */}
-        <BlogFeatured spaceTopClass="pt-95" spaceBottomClass="pb-55" />
       </LayoutTwo>
     </Fragment>
   );

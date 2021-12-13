@@ -5,7 +5,6 @@ import HeroSliderTwentyFive from "../../wrappers/hero-slider/HeroSliderTwentyFiv
 import BannerTwentyFive from "../../wrappers/banner/BannerTwentyFive";
 import FeatureIconFive from "../../wrappers/feature-icon/FeatureIconFive";
 import TabProductSixteen from "../../wrappers/product/TabProductSixteen";
-import BlogFeaturedFour from "../../wrappers/blog-featured/BlogFeaturedFour";
 import MedicalContact from "../../components/contact/MedicalContact";
 import BannerTwentySix from "../../wrappers/banner/BannerTwentySix";
 import ProductSlider from "../../wrappers/product/ProductSlider";
@@ -37,8 +36,7 @@ const HomeMedicalEquipment = () => {
         <BannerTwentySix spaceBottomClass="pb-70" />
         {/* product slider */}
         <ProductSlider category="medical" />
-        {/* blog */}
-        <BlogFeaturedFour spaceBottomClass="pb-55" spaceTopClass="pt-95" />
+
         {/* contact */}
         <MedicalContact />
       </LayoutOne>

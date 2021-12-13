@@ -6,7 +6,7 @@ import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
-// import axios from "axios";
+import axios from "axios";
 
 const LoginRegister = ({ location }) => {
   const { pathname } = location;
@@ -24,14 +24,15 @@ const LoginRegister = ({ location }) => {
   };
 
 
-  async function signup() {
-    // let result = await axios.post("http://localhost:8000/api/register", user);
+  async function register() {
+    let result = await axios.post("http://92.87.185.5/api/register", user);
     //uncoment this when you get apikey and axios import
     setErrors('Registration Successful')
     setUser({ name: "", email: "", password: "" }) // To Clear all fields
 
   }
-  // const onSubmit = setUser => console.log(setUser);
+  console.log(register);
+  const onSubmit = setUser => console.log(setUser);
   //and this to 
   return (
     <Fragment>
@@ -82,7 +83,7 @@ const LoginRegister = ({ location }) => {
                                 label='Email' name="email" value={email} onChange={e => onInputChange(e)} placeholder='Enter Email' type='email' required
                               />
                               <div className="button-box">
-                                <button type="submit" onClick={signup}>
+                                <button type="submit" onClick={register}>
                                   <span>Register</span>
                                 </button>
                               </div>

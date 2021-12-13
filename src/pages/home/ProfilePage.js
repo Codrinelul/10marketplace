@@ -5,7 +5,7 @@ import HeroSliderTwo from "../../wrappers/hero-slider/HeroSliderTwo";
 import TabProductTwo from "../../wrappers/product/TabProductTwo";
 import CountDownOne from "../../wrappers/countdown/CountDownOne";
 import FeatureIconTwo from "../../wrappers/feature-icon/FeatureIconTwo";
-import BlogFeatured from "../../wrappers/blog-featured/BlogFeatured";
+
 
 const ProfilePage = () => {
   return (
@@ -38,8 +38,7 @@ const ProfilePage = () => {
         {/* feature icon */}
         <FeatureIconTwo spaceTopClass="pt-100" spaceBottomClass="pb-60" />
 
-        {/* blog featured */}
-        <BlogFeatured spaceBottomClass="pb-55" />
+
       </LayoutOne>
     </Fragment>
   );

@@ -16,14 +16,12 @@ const ProductImageDescription = ({
   currency,
   cartItems,
   wishlistItems,
-  compareItems
+
 }) => {
   const wishlistItem = wishlistItems.filter(
     wishlistItem => wishlistItem.id === product.id
   )[0];
-  const compareItem = compareItems.filter(
-    compareItem => compareItem.id === product.id
-  )[0];
+
   const { addToast } = useToasts();
 
   const discountedPrice = getDiscountPrice(product.price, product.discount);
@@ -34,9 +32,8 @@ const ProductImageDescription = ({
 
   return (
     <div
-      className={`shop-area ${spaceTopClass ? spaceTopClass : ""} ${
-        spaceBottomClass ? spaceBottomClass : ""
-      }`}
+      className={`shop-area ${spaceTopClass ? spaceTopClass : ""} ${spaceBottomClass ? spaceBottomClass : ""
+        }`}
     >
       <div className="container">
         <div className="row">
@@ -65,7 +62,7 @@ const ProductImageDescription = ({
               finalProductPrice={finalProductPrice}
               cartItems={cartItems}
               wishlistItem={wishlistItem}
-              compareItem={compareItem}
+
               addToast={addToast}
             />
           </div>

@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import MetaTags from "react-meta-tags";
 import LayoutOne from "../../layouts/LayoutOne";
 import FeatureIconFour from "../../wrappers/feature-icon/FeatureIconFour";
-import BlogFeaturedThree from "../../wrappers/blog-featured/BlogFeaturedThree";
+
 import BannerTwentyOne from "../../wrappers/banner/BannerTwentyOne";
 import CountDownThree from "../../wrappers/countdown/CountDownThree";
 import HeroSliderTwentyThree from "../../wrappers/hero-slider/HeroSliderTwentyThree";
@@ -40,8 +40,7 @@ const HomePetFood = () => {
           containerClass="container"
           responsiveClass="res-mrg-md-mt"
         />
-        {/* blog featured */}
-        <BlogFeaturedThree spaceTopClass="pt-90" spaceBottomClass="pb-70" />
+
       </LayoutOne>
     </Fragment>
   );
