@@ -2112,3 +2112,17 @@ a.default-btn {
   align-self: center;
   padding-top: 25px;
 }
+.feed-post-content h3 {
+  color: #dcdcdc;
+  align-self: center;
+
+  padding: 25px;
+}
+.feed-post-content span {
+  color: $theme-color;
+}
+
+.FeedPost-user h1 {
+  color: $theme-color;
+  padding: 30px 20px 0px 20px;
+}

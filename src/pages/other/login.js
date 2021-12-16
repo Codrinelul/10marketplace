@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import MetaTags from "react-meta-tags";
 
 import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
@@ -14,43 +14,57 @@ import { Link, } from "react-router-dom";
 import axios from 'axios';
 import { useHistory, } from "react-router-dom";
 
-const LoginSignIn = () => {
+function LoginSignIn() {
 
-    const [msg, setMsg] = useState('');
+    // const [msg, setMsg] = useState('');
 
-    // const [ username ] = useState("");
-    //uncoment this on deployment
+    // // const [ username ] = useState("");
+    // //uncoment this on deployment
 
-    const [user, setUser] = useState({
-        email: "",
-        password: ""
-    });
+    // const [user, setUser] = useState({
+    //     email: "",
+    //     password: ""
+    // });
 
-    let history = useHistory();
+    // let history = useHistory();
 
-    const { email, password } = user;
-    const onInputChange = e => {
-        setUser({ ...user, [e.target.name]: e.target.value });
-    };
+    // const { email, password } = user;
+    // const onInputChange = e => {
+    //     setUser({ ...user, [e.target.name]: e.target.value });
+    // };
 
-    const signIn = () => {
+    // const signIn = () => {
 
-        // const users = { username };  // To Store Email in Localstore and send to Home Page 
+    //     // const users = { username };  // To Store Email in Localstore and send to Home Page 
 
-        if (user.email === '') {
-            alert('Email Field is empty')
-        }
-        else if (user.password === '') {
-            alert('Pass Field is empty')
-        }
+    //     if (user.email === '') {
+    //         alert('Email Field is empty')
+    //     }
+    //     else if (user.password === '') {
+    //         alert('Pass Field is empty')
+    //     }
 
-        axios.post("http://92.87.185.5/", user)
-            .then(response => {
-                setMsg(response.data);
-                localStorage.setItem("users", response.data);
-                history.push("/Home");
+    //     axios.post("http://92.87.185.5/", user)
+    //         .then(response => {
+    //             setMsg(response.data);
+    //             localStorage.setItem("users", response.data);
+    //             history.push("/Home");
+    //         });
+    // }
+    useEffect(() => {
+        axios.defaults.baseURL = 'http://92.87.185.5/api/';
+        axios.post('/login', {
+            email: "petreastefanvalentin@yahoo.com",
+            password: "test"
+        })
+            .then(({ data }) => {
+                if (data.status === "success") {
+                    console.log(data)
+                } else {
+                    console.log("error")
+                }
             });
-    }
+    });
 
     return (
         <Fragment>
@@ -92,10 +106,10 @@ const LoginSignIn = () => {
                                                     <div className="login-register-form">
                                                         <form>
                                                             <input
-                                                                label='Email' name="email" value={email} onChange={e => onInputChange(e)} placeholder='Enter Email' type='email' required
+                                                                label='Email' name="email" placeholder='Enter Email' type='email' required
                                                             />
                                                             <input
-                                                                label='Password' name="password" value={password} onChange={e => onInputChange(e)} placeholder='Enter password' type='password' required
+                                                                label='Password' name="password" placeholder='Enter password' type='password' required
                                                             />
 
                                                             <div className="button-box">
@@ -106,11 +120,11 @@ const LoginSignIn = () => {
                                                                         Forgot Password?
                                                                     </Link>
                                                                 </div>
-                                                                <button type="submit" onClick={signIn}>
+                                                                <button type="submit" >
                                                                     <span>Login</span>
                                                                 </button>
                                                             </div>
-                                                            <h4 >{msg}</h4>
+
                                                         </form>
                                                     </div>
                                                 </div>
