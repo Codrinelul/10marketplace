@@ -2093,3 +2093,22 @@ a.default-btn {
   display: flex;
   flex-direction: row;
 }
+.test {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.profile-img-top {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top !important;
+  margin: 5px;
+}
+
+.user-info-display h3 {
+  color: #dcdcdc;
+  align-self: center;
+  padding-top: 25px;
+}

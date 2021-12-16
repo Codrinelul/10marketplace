@@ -31,11 +31,9 @@ const FooterThree = ({
 
   return (
     <footer
-      className={`footer-area ${
-        backgroundColorClass ? backgroundColorClass : ""
-      } ${spaceTopClass ? spaceTopClass : ""} ${
-        spaceBottomClass ? spaceBottomClass : ""
-      }`}
+      className={`footer-area ${backgroundColorClass ? backgroundColorClass : ""
+        } ${spaceTopClass ? spaceTopClass : ""} ${spaceBottomClass ? spaceBottomClass : ""
+        }`}
     >
       <div className="container">
         <div className="footer-border pt-100">
@@ -86,18 +84,21 @@ const FooterThree = ({
                 <div className="footer-list">
                   <ul>
                     <li>
-                      <Link to={process.env.PUBLIC_URL + "#/"}>Returns</Link>
+                      <Link to={process.env.PUBLIC_URL + "/cookiesPolicy"}>Cookies</Link>
                     </li>
                     <li>
-                      <Link to={process.env.PUBLIC_URL + "#/"}>
-                        Support Policy
+                      <Link to={process.env.PUBLIC_URL + "/paymentPolicy"}>
+                        Payment Policy
                       </Link>
                     </li>
                     <li>
-                      <Link to={process.env.PUBLIC_URL + "#/"}>Size guide</Link>
+                      <Link to={process.env.PUBLIC_URL + "/privacyPolicy"}>Privacy Policy</Link>
                     </li>
                     <li>
-                      <Link to={process.env.PUBLIC_URL + "#/"}>FAQs</Link>
+                      <Link to={process.env.PUBLIC_URL + "/returnPolicy"}>Return Policy</Link>
+                    </li>
+                    <li>
+                      <Link to={process.env.PUBLIC_URL + "/termsAndConditions"}>Terms and conditions</Link>
                     </li>
                   </ul>
                 </div>

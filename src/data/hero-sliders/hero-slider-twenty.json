@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "title": "Natural & Healthy",
-    "subtitle": "100% Organic Fruits Collection",
-    "image": "/assets/img/slider/slider-19.jpg",
-    "url": "/shop-grid-standard"
+    "title": "nume site",
+    "subtitle": "Our top 20 Sellers",
+    "image": "/assets/img/slider/slider-19.jpg"
+  
   },
   {
     "id": 2,
-    "title": "Natural & Healthy",
-    "subtitle": "100% Organic Veg Collection",
-    "image": "/assets/img/slider/slider-19.jpg",
-    "url": "/shop-grid-standard"
+    "title": "nume site",
+    "subtitle": "Sellers you can trust",
+    "image": "/assets/img/slider/slider-19.jpg"
+    
   }
 ]

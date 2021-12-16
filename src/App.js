@@ -102,7 +102,7 @@ const Checkout = lazy(() => import("./pages/other/Checkout"));
 const Tokens = lazy(() => import("./pages/buySellTokens/BuySellTokens"));
 const NotFound = lazy(() => import("./pages/other/NotFound"));
 const PostProduct = lazy(() => import("./pages/other/PostProduct"));
-
+const topSellers = lazy(() => import("./pages/Sellers/topSellers"));
 
 //StaticPages
 const paymentPolicy = lazy(() => import("./pages/staticPages/paymentPolicy"));
@@ -417,6 +417,11 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/not-found"}
                   component={NotFound}
                 />
+                <Route
+                  path={process.env.PUBLIC_URL + "/topSellers"}
+                  component={topSellers}
+                />
+
 
                 {/* Static pages */}
                 <Route
