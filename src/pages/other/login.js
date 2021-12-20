@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
-import React, { Fragment, useState, useEffect, Component } from "react";
+
+import React, { Fragment, Component } from "react";
 import MetaTags from "react-meta-tags";
 
-import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
+
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import LayoutOne from "../../layouts/LayoutOne";
@@ -12,13 +12,14 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import { Link, } from "react-router-dom";
 
 
-import { Redirect } from "react-router-dom";
-import apiClient from "../services/api"
+
 import axios from "axios";
 
 
 
 export default class LoginSignIn extends Component {
+
+    state = {};
 
     handleSubmit = e => {
         e.preventDefault();
@@ -31,14 +32,25 @@ export default class LoginSignIn extends Component {
             res => {
                 localStorage.setItem('token', res.data.token)
                 console.log(res)
-            }
-        ).catch(
-            err => {
-                console.log(err);
+                this.setState({
+                    message: res.data.message
+                })
+                console.log(res.data.message);
             }
         )
     }
     render() {
+
+        let error = '';
+
+        if (this.state.message) {
+            error = (
+                <div className="alert-danger-text " role="alert">
+                    {this.state.message}
+                </div>
+            )
+        }
+
         return (
             <Fragment>
                 <MetaTags>
@@ -75,6 +87,7 @@ export default class LoginSignIn extends Component {
                                                     <div className="login-form-container">
                                                         <div className="login-register-form">
                                                             <form onSubmit={this.handleSubmit}>
+                                                                {error}
                                                                 <input
                                                                     label='Email'
                                                                     name="email"

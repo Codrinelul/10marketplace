@@ -1,7 +1,5 @@
-import PropTypes from "prop-types";
-import React, { Fragment, useState, Component } from "react";
+import React, { Fragment, Component } from "react";
 import MetaTags from "react-meta-tags";
-import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import LayoutOne from "../../layouts/LayoutOne";
@@ -9,6 +7,7 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import axios from "axios";
 
 export default class LoginRegister extends Component {
+  state = {};
 
   handleSubmit = e => {
     e.preventDefault();
@@ -20,15 +19,54 @@ export default class LoginRegister extends Component {
     };
     axios.post('register', data).then(
       res => {
+        localStorage.setItem('token', res.data.token)
         console.log(res)
-      }
-    ).catch(
-      err => {
-        console.log(err);
+        this.setState({
+          message1: res.data.errors.firstname,
+          message2: res.data.errors.lastname,
+          message: res.data.errors.email,
+          message3: res.data.errors.password
+        })
+
+        console.log(res.data.errors[0]);
       }
     )
   }
   render() {
+    let error = '';
+    let error1 = "";
+    let error2 = "";
+    let error3 = "";
+    if (this.state.message) {
+      error = (
+        <div className="alert-danger-text" role="alert">
+          {this.state.message}
+        </div>
+      )
+    }
+    if (this.state.message1) {
+      error1 = (
+        <div className="alert-danger-text" role="alert">
+          {this.state.message1}
+        </div>
+      )
+    }
+    if (this.state.message2) {
+      error2 = (
+        <div className="alert-danger-text" role="alert">
+          {this.state.message2}
+        </div>
+      )
+    }
+    if (this.state.message3) {
+      error3 = (
+        <div className="alert-danger-text" role="alert">
+          {this.state.message3}
+        </div>
+      )
+    }
+
+
     return (
       <Fragment>
         <MetaTags>
@@ -67,16 +105,17 @@ export default class LoginRegister extends Component {
                               <form onSubmit={this.handleSubmit}>
                                 <input
                                   label='FirstName' name="firstname" onChange={e => this.firstname = e.target.value} placeholder='Enter firstname' type='text' required
-                                />
+                                /> {error1}
                                 <input
                                   label='LastName' name="lastname" onChange={e => this.lastname = e.target.value} placeholder='Enter lastname' type='text' required
-                                />
+                                />{error2}
                                 <input
                                   label='Email' name="email" onChange={e => this.email = e.target.value} placeholder='Enter Email' type='email' required
-                                />
+                                /> {error}
                                 <input
                                   label='Password' name="password" onChange={e => this.password = e.target.value} placeholder='Enter password' type='password' required
-                                />
+                                />{error3}
+
 
                                 <div className="button-box">
                                   <button type="submit">

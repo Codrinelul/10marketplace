@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactStarsRating from 'react-awesome-stars-rating';
 
 
