@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, Component } from "react";
 import MetaTags from "react-meta-tags";
 
 import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
@@ -11,139 +11,114 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 
 import { Link, } from "react-router-dom";
 
-import axios from 'axios';
-import { useHistory, } from "react-router-dom";
 
-function LoginSignIn() {
+import { Redirect } from "react-router-dom";
+import apiClient from "../services/api"
+import axios from "axios";
 
-    // const [msg, setMsg] = useState('');
 
-    // // const [ username ] = useState("");
-    // //uncoment this on deployment
 
-    // const [user, setUser] = useState({
-    //     email: "",
-    //     password: ""
-    // });
+export default class LoginSignIn extends Component {
 
-    // let history = useHistory();
+    handleSubmit = e => {
+        e.preventDefault();
+        const data = {
 
-    // const { email, password } = user;
-    // const onInputChange = e => {
-    //     setUser({ ...user, [e.target.name]: e.target.value });
-    // };
+            email: this.email,
+            password: this.password
+        };
+        axios.post('login', data).then(
+            res => {
+                localStorage.setItem('token', res.data.token)
+                console.log(res)
+            }
+        ).catch(
+            err => {
+                console.log(err);
+            }
+        )
+    }
+    render() {
+        return (
+            <Fragment>
+                <MetaTags>
+                    <title>Flone | Login</title>
+                    <meta
+                        name="description"
+                        content="Compare page of flone react minimalist eCommerce template."
+                    />
+                </MetaTags>
 
-    // const signIn = () => {
+                <LayoutOne headerTop="visible">
+                    {/* breadcrumb */}
+                    <Breadcrumb />
+                    <div className="login-register-area pt-100 pb-100">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-7 col-md-12 ml-auto mr-auto">
+                                    <div className="login-register-wrapper">
+                                        <Tab.Container defaultActiveKey="login">
+                                            <Nav variant="pills" className="login-register-tab-list">
+                                                <Nav.Item>
+                                                    <Nav.Link eventKey="login">
+                                                        <h4>Login</h4>
+                                                    </Nav.Link>
+                                                </Nav.Item>
+                                                <Nav.Item>
+                                                    <Nav.Link eventKey="register" href="/login-register">
+                                                        <h4>Register</h4>
+                                                    </Nav.Link>
+                                                </Nav.Item>
+                                            </Nav>
+                                            <Tab.Content>
+                                                <Tab.Pane eventKey="login">
+                                                    <div className="login-form-container">
+                                                        <div className="login-register-form">
+                                                            <form onSubmit={this.handleSubmit}>
+                                                                <input
+                                                                    label='Email'
+                                                                    name="email"
 
-    //     // const users = { username };  // To Store Email in Localstore and send to Home Page 
+                                                                    onChange={e => this.email = e.target.value}
+                                                                    placeholder='Enter Email' type='email' required
+                                                                />
+                                                                <input
+                                                                    label='Password'
+                                                                    name="password"
 
-    //     if (user.email === '') {
-    //         alert('Email Field is empty')
-    //     }
-    //     else if (user.password === '') {
-    //         alert('Pass Field is empty')
-    //     }
+                                                                    onChange={e => this.password = e.target.value}
+                                                                    placeholder='Enter password' type='password'
+                                                                    required
+                                                                />
 
-    //     axios.post("http://92.87.185.5/", user)
-    //         .then(response => {
-    //             setMsg(response.data);
-    //             localStorage.setItem("users", response.data);
-    //             history.push("/Home");
-    //         });
-    // }
-    useEffect(() => {
-        axios.defaults.baseURL = 'http://92.87.185.5/api/';
-        axios.post('/login', {
-            email: "petreastefanvalentin@yahoo.com",
-            password: "test"
-        })
-            .then(({ data }) => {
-                if (data.status === "success") {
-                    console.log(data)
-                } else {
-                    console.log("error")
-                }
-            });
-    });
-
-    return (
-        <Fragment>
-            <MetaTags>
-                <title>Flone | Login</title>
-                <meta
-                    name="description"
-                    content="Compare page of flone react minimalist eCommerce template."
-                />
-            </MetaTags>
-            <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>Home</BreadcrumbsItem>
-            <BreadcrumbsItem>
-                Login Register
-            </BreadcrumbsItem>
-            <LayoutOne headerTop="visible">
-                {/* breadcrumb */}
-                <Breadcrumb />
-                <div className="login-register-area pt-100 pb-100">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-7 col-md-12 ml-auto mr-auto">
-                                <div className="login-register-wrapper">
-                                    <Tab.Container defaultActiveKey="login">
-                                        <Nav variant="pills" className="login-register-tab-list">
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="login">
-                                                    <h4>Login</h4>
-                                                </Nav.Link>
-                                            </Nav.Item>
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="register" href="/login-register">
-                                                    <h4>Register</h4>
-                                                </Nav.Link>
-                                            </Nav.Item>
-                                        </Nav>
-                                        <Tab.Content>
-                                            <Tab.Pane eventKey="login">
-                                                <div className="login-form-container">
-                                                    <div className="login-register-form">
-                                                        <form>
-                                                            <input
-                                                                label='Email' name="email" placeholder='Enter Email' type='email' required
-                                                            />
-                                                            <input
-                                                                label='Password' name="password" placeholder='Enter password' type='password' required
-                                                            />
-
-                                                            <div className="button-box">
-                                                                <div className="login-toggle-btn">
-                                                                    <input type="checkbox" />
-                                                                    <label className="ml-10">Remember me</label>
-                                                                    <Link to={process.env.PUBLIC_URL + "/"}>
-                                                                        Forgot Password?
-                                                                    </Link>
+                                                                <div className="button-box">
+                                                                    <div className="login-toggle-btn">
+                                                                        <input type="checkbox" />
+                                                                        <label className="ml-10">Remember me</label>
+                                                                        <Link to={process.env.PUBLIC_URL + "/"}>
+                                                                            Forgot Password?
+                                                                        </Link>
+                                                                    </div>
+                                                                    <button type="submit" >
+                                                                        <span>Login</span>
+                                                                    </button>
                                                                 </div>
-                                                                <button type="submit" >
-                                                                    <span>Login</span>
-                                                                </button>
-                                                            </div>
 
-                                                        </form>
+                                                            </form>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </Tab.Pane>
+                                                </Tab.Pane>
 
-                                        </Tab.Content>
-                                    </Tab.Container>
+                                            </Tab.Content>
+                                        </Tab.Container>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </LayoutOne>
-        </Fragment>
-    );
+                </LayoutOne>
+            </Fragment>
+        );
+    }
 };
 
-LoginSignIn.propTypes = {
-    location: PropTypes.object
-};
-
-export default LoginSignIn;

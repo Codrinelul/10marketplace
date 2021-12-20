@@ -12,8 +12,10 @@ import products from "./data/products.json";
 import App from "./App";
 import "./assets/scss/style.scss";
 import * as serviceWorker from "./serviceWorker";
-
+import axios from 'axios';
 import { composeWithDevTools } from "redux-devtools-extension";
+
+axios.defaults.baseURL = 'http://92.87.185.5/api/'
 
 const store = createStore(
   rootReducer,
