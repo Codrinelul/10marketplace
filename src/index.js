@@ -17,7 +17,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 axios.defaults.baseURL = 'http://92.87.185.5/api/';
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
-// console.log(axios.defaults.headers.common)
+console.log(axios.defaults.headers.common)
 const store = createStore(
   rootReducer,
   load(),
